@@ -1,45 +1,30 @@
-# Backend - Heroku (or render.com)
+# Packages
 
-# DataBase - mongodbcloud.com
+## Server and HTTP-requests processing
 
-# Dockerfile
+- `express` - create server package. Node.js framework for build web-applications and API. Gave instruments for routing, processing requests and response.
+- `cors` - allows setup support CORS (Cross-Origin Resource Sharing), for server accepting requests from other domains or ports.
+- `logger` - brocker for logging HTTP-requests for Node.js
 
-List of programs for install in docker hub
+## Configuration
 
-- node.js
-- node_modules
-- project files
+- `dotenv` - allows save confidential data (such as API keys, passwords) in an .env file and load them to environment variables
+- `cross-env` - provides the ability to set environment variables for cross-platform environments, such as Windows, Linux or MacOS via the console.
 
-## Download node package for docker in CLI: `docker pull node:20.11`
+## Data validation
 
-## Download node package for docker in Dockerfile: `FROM node:20.11`
+- `joi` - package for schemas describing and validating data against those schemas. Used for validating request body, arguments and other data.
+- `mongoose-validator` - package for integration a validation library with Mongoose, allowing you to validate field values in MongoDB schemas.
 
-# Docker CLI Commands
+## Database
 
-`docker help` show all commands
+- `mongoose`- an object-document module for MongoDB. Provides a schema for data modeling and data interaction via JavaScrip.
 
-### Build Docker image by command: `docker build .`
+## Logging
 
-This command will run the Dockerfile and execute the commands in this file sequentially
+- `morgan` - Middleware for HTTP requests logging. Used for track incoming requests and server responses.
 
-## Main useful commands
+## Other tools
 
-`docker images` - show all images
-
-`docker ps -a` - show all containers (running and stopped)
-
-`docker start id` - run exist container with this id (without blocking terminal)
-
-`docker stop id` - stop docker container with this container id
-
-`docker run -d -p 4000:3000 image-id` run docker container without blocking terminal (without transferring to container console). Used for first start image (when there is no any containers builded from this image)
-
-Port 4000 — it is port of the Host (your PC), through with you access the application. You could made request to http://localhost:4000/api/contacts
-
-Port 3000 — it is internal container's port (port inside of the container), when your application works. Showed in Dockerfile
-
-## Additional commands
-
-`docker run id` - run docker container with this image id (the console of terminal will be blocked, because you will be transferred to container console)
-
-`docker ps` - show all running containers
+- `nanoid` - generator of uniq short keys. Used for example for creating user IDs or tokens.
+- `nodemon` - tool for automatic restarting Node.js-applications after code changes during development. Eliminates the need manually restart the server.
