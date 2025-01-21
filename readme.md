@@ -1,3 +1,5 @@
+# Example send email by broker [sendgrid](sendgrid.com)
+
 # Packages
 
 ## Server and HTTP-requests processing
